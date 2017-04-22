@@ -1,12 +1,9 @@
 #generate password ui window
 
-#main ui window
-
-#creates GUI for changeMaker assignment
 
 from tkinter import * #imports tkinter
 
-class WindowMain(Tk):
+class GeneratePassword(Tk):
     def __init__(self):
         Tk.__init__(self)
 
@@ -22,38 +19,37 @@ class WindowMain(Tk):
         self.length = Entry(self)
         self.length.grid(row = 2, column = 1)
 
-        Checkbutton(self,text ="Special Characters",variable = var2).grid(row = 3, sticky = W)
+        self.cbSpecialCharsVal = IntVar()
+        self.cbSpecialChars = Checkbutton(self, text = "Special Characters", variable = self.cbSpecialCharsVal)
+        self.cbSpecialChars.grid(row = 2, column = 2)
 
+        self.cbUpperCaseVal = IntVar()
+        self.cbUpperCase = Checkbutton(self, text = "Upper Case", variable = self.cbUpperCaseVal)
+        self.cbUpperCase.grid(row = 3, column = 0)
 
+        self.cbLowerCaseVal = IntVar()
+        self.cbLowerCase = Checkbutton(self, text = "Lower Case", variable = self.cbLowerCaseVal)
+        self.cbLowerCase.grid(row = 3, column = 1)
 
+        self.cbNumbersVal = IntVar()
+        self.cbNumbers = Checkbutton(self, text = "Numbers", variable = self.cbNumbersVal)
+        self.cbNumbers.grid(row = 3, column = 2)
 
-# Checkbutton(master, text="female", variable=var2).grid(row=2, sticky=W)
-# Button(master, text='Quit', command=master.quit).grid(row=3, sticky=W, pady=4)
-# Button(master, text='Show', command=var_states).grid(row=4, sticky=W, pady=4)
-# mainloop()
+        self.btnGenerate = Button(self, text = "Generate", command = self.PlaceHolder)
+        self.btnGenerate.grid(row = 4, column = 0)
 
-
-
-
-
-        # self.btnCalculate = Button(self, text = "Generate Password", command = self.showVals) #creates a button and when clicked makes it invoke showVals function
-        # self.btnCalculate.grid(row = 3, column = 0) #assign to grid position 14,0
-
-        # #create a button called clear
-        # self.btnClear = Button(self, text = "Change Master Password", command = self.clearTextBoxes) #creates a button and when clicked makes it invoke clearTextBoxes function
-        # self.btnClear.grid(row = 4, column = 0) #assign to grid position 14,1
-
-        #         #creates a button called calculate
-        # self.btnCalculate = Button(self, text = "Close Program", command = self.showVals) #creates a button and when clicked makes it invoke showVals function
-        # self.btnCalculate.grid(row = 5, column = 0) #assign to grid position 14,0
+        self.btnClose = Button(self, text = "Close", command = self.PlaceHolder)
+        self.btnClose.grid(row = 4, column = 1)
 
         self.mainloop() #loop window until you push close button on the top window bar
-            
-        #function to display to the screen the values calculated by the rectangle func
+
+    def PlaceHolder(self):
+        
+        return
 
 
 def main():
-    wmMain = WindowMain()   # Have the main function call your class App to start the GUI
+    wdoGeneratePassword = GeneratePassword()   # Have the main function call your class App to start the GUI
 
 
 if __name__ == "__main__": #check if the system variable name is equal to main

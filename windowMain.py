@@ -11,30 +11,29 @@ class WindowMain(Tk):
 
         Label(self, text = "Password Vault").grid(row = 0, column = 0) #creates a label for Password Vault and places at (0,0)
 
+        self.btnCreateVault = Button(self, text = "Create Vault", command = self.PlaceHolder) #creates a button
+        self.btnCreateVault.grid(row = 1, column = 0) #assign to grid position 1,0
 
-        #creates a button called calculate
-        self.btnCalculate = Button(self, text = "Create Vault", command = self.showVals) #creates a button and when clicked makes it invoke showVals function
-        self.btnCalculate.grid(row = 1, column = 0) #assign to grid position 1,0
+        self.btnLoadVault = Button(self, text = "Load Vault", command = self.PlaceHolder) #creates a button
+        self.btnLoadVault.grid(row = 2, column = 0) #assign to grid position 2,0
 
-        #create a button called clear
-        self.btnClear = Button(self, text = "Load Vault", command = self.clearTextBoxes) #creates a button and when clicked makes it invoke clearTextBoxes function
-        self.btnClear.grid(row = 2, column = 0) #assign to grid position 14,1        #creates a button called calculate
+        self.btnGeneratePassword = Button(self, text = "Generate Password", command = self.PlaceHolder) #creates a button
+        self.btnGeneratePassword.grid(row = 3, column = 0) #assign to grid position 3,0
 
-        self.btnCalculate = Button(self, text = "Generate Password", command = self.showVals) #creates a button and when clicked makes it invoke showVals function
-        self.btnCalculate.grid(row = 3, column = 0) #assign to grid position 14,0
+        self.btnChangeMasterPassword = Button(self, text = "Change Master Password", command = self.PlaceHolder) #creates a button
+        self.btnChangeMasterPassword.grid(row = 4, column = 0) #assign to grid position 4,0
 
-        #create a button called clear
-        self.btnClear = Button(self, text = "Change Master Password", command = self.clearTextBoxes) #creates a button and when clicked makes it invoke clearTextBoxes function
-        self.btnClear.grid(row = 4, column = 0) #assign to grid position 14,1
-
-                #creates a button called calculate
-        self.btnCalculate = Button(self, text = "Close Program", command = self.showVals) #creates a button and when clicked makes it invoke showVals function
-        self.btnCalculate.grid(row = 5, column = 0) #assign to grid position 14,0
+        self.btnCloseProgram = Button(self, text = "Close Program", command = self.PlaceHolder) #creates a button
+        self.btnCloseProgram.grid(row = 5, column = 0) #assign to grid position 5,0
 
         self.mainloop() #loop window until you push close button on the top window bar
 
+    def PlaceHolder(self):
+         #### TODO: PLACEHOLDER TO ALLOW TO RUN GUI  --  NEED TO CREATE FUNCTIONS TO CALL THE PROPER WINDOWS AND REFERENCE THEM FROM THE BUTTONS ###
+        return
+
 def main():
-    wmMain = WindowMain() 
+    wdoMain = WindowMain() 
 
 
 if __name__ == "__main__": #check if the system variable name is equal to main

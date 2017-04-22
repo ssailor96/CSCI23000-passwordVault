@@ -7,15 +7,27 @@ class WindowGetMasterPassword(Tk):
         Tk.__init__(self)
 
         self.wm_title("Get Master Password") #creates title for window
-        Label(self, text = "Master Password").grid(row = 0, column = 0)
-            #Need to change self.showVals
-        self.btnSubmit = Button(self, text = "Submit", command = self.showVals) #creates a button and when clicked makes it invoke showVals function
+
+        Label(self, text = "Master Password").grid(row = 0, column = 0) #create a label called "Master Password" and places at 0,0
+        self.getMasterPassword = Entry(self)
+        self.getMasterPassword.grid(row = 0, column = 1)
+
+        self.btnSubmit = Button(self, text = "Submit", command = self.PlaceHolder) #creates a button
         self.btnSubmit.grid(row = 1, column = 0) #assign to grid position 1,0
+
+        self.btnClear = Button(self, text = "Clear", command = self.PlaceHolder) #creates a button
+        self.btnClear.grid(row = 1, column = 1) #assign to grid position 1,1
         
         self.mainloop()
 
+
+
+    def PlaceHolder(self):
+
+        return
+
 def main():
-    wmMain = WindowGetMasterPassword()   # Have the main function call your class App to start the GUI
+    wdoGetMasterPassword = WindowGetMasterPassword()   #Main function calls class WindowGetMasterPassword to start the GUI
 
 if __name__ == "__main__": #check if the system variable name is equal to main
     main() #call main function
