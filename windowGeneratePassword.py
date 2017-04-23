@@ -3,7 +3,17 @@
 
 from tkinter import * #imports tkinter
 
-class GeneratePassword(Tk):
+import random
+
+specialChars = "!@#$%^&*"
+
+upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+lowerCase = "abcdefghijklmnopqrstuvwxyx"
+
+numbers = "0123456789"
+
+class WindowGeneratePassword(Tk):
     def __init__(self):
         Tk.__init__(self)
 
@@ -49,7 +59,7 @@ class GeneratePassword(Tk):
 
 
 def main():
-    wdoGeneratePassword = GeneratePassword()   # Have the main function call your class App to start the GUI
+    wdoGeneratePassword = WindowGeneratePassword()   # Have the main function call your class App to start the GUI
 
 
 if __name__ == "__main__": #check if the system variable name is equal to main
