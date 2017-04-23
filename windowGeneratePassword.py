@@ -3,15 +3,15 @@
 
 from tkinter import * #imports tkinter
 
-import random
+import random #import random for generating password
 
-specialChars = "!@#$%^&*"
+specialChars = "!@#$%^&*" #creates variable for special characters and gives value of special characters
 
-upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" #creates variable for uppercase letters and gives value of upper case letters
 
-lowerCase = "abcdefghijklmnopqrstuvwxyx"
+lowerCase = "abcdefghijklmnopqrstuvwxyx" #creates variable for lowercase letters and gives value of lower case letters
 
-numbers = "0123456789"
+numbers = "0123456789" #creates variable for numbers and gives value of numbers
 
 class Password(object):
     def __init__(self, length, useSpecialChars, useUpperCase, useLowerCase, useNumbers):
@@ -53,35 +53,56 @@ class Password(object):
         self.useNumbers = useNumbers
 
     def createPassword(self):
-        plainText = ""
-        #find checked checkboxes
-        #if boxes checked, take strings for those checkboxes and concatinate them
-        #scramble string
-        #use random to randomly select characters from string, getting the number of characters in length
-        #concatinate characters into password
-        #print in UI
+        password = ""
+        dictCategories = {}
+
+        hasSpecialChars = True
+        hasUpperCase = True
+        hasLowerCase = True 
+        hasNumbers = True
 
         if self.getSpecialChars() == True:
-            plainText += specialChars
+            hasSpecialChars = False
+            dictCategories["SpecialChars"] = specialChars
 
         if self.getUpperCase() == True:
-            plainText += upperCase
+            hasUpperCase = False
+            dictCategories["UpperCase"] = upperCase
 
         if self.getLowerCase() == True:
-            plainText += lowerCase
+            hasLowerCase = False
+            dictCategories["LowerCase"] = lowerCase
 
         if self.getNumbers() == True:
-            plainText += numbers
+            hasNumbers = False
+            dictCategories["Numbers"]= numbers
 
-        lst = list(plainText)
+        for val in range(0,self.getLength()):
+            selection = random.randint(0,len(dictCategories)-1)
 
-        random.shuffle(lst)
+            selectionKey = list(dictCategories)[selection]
 
-        generatedKey = ''.join(lst)
+            blah = list(dictCategories[selectionKey])
 
-        print (generatedKey)
+            charIndex = random.randint(0,len(blah)-1)
 
-        return
+            charSelection = blah[charIndex]
+
+            password += str(charSelection)
+
+            if selectionKey == "SpecialChars":
+                hasSpecialChars = True
+            elif selectionKey =="UpperCase":
+                hasUpperCase = True
+            elif selectionKey == "LowerCase":
+                hasLowerCase = True
+            elif selectionKey  =="Numbers":
+                hasNumbers=True
+
+        if hasSpecialChars ==True and hasUpperCase ==True and hasLowerCase == True and hasNumbers ==True :
+            return password
+        else:
+            self.createPassword()
 
 
 class WindowGeneratePassword(Tk):
@@ -135,7 +156,9 @@ class WindowGeneratePassword(Tk):
         useLowerCase = self.cbLowerCaseVal.get()
         useNumbers = self.cbNumbersVal.get()
         password = Password(length,useSpecialChars,useUpperCase,useLowerCase,useNumbers)
-        password.createPassword()
+        p = password.createPassword()
+        self.txtGeneratedPassword.delete(0,END)
+        self.txtGeneratedPassword.insert(0,p) 
 
         return
 

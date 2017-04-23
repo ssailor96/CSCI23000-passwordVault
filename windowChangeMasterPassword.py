@@ -1,9 +1,11 @@
 #change master password ui window
 
+#importing tkinter
 from tkinter import *
 
-class WindowChangeMasterPassword(Tk):
-    def __init__(self):
+
+class WindowChangeMasterPassword(Tk): #creating a class for the UI window
+    def __init__(self): #
         Tk.__init__(self)
 
         self.wm_title("Change Master Password")
