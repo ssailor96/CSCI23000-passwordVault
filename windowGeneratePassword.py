@@ -1,5 +1,11 @@
 #generate password ui window
 
+#sources:
+
+#in class example of widgets
+#http://stackoverflow.com/questions/29073110/python-calling-a-function-from-within-itself
+#http://www.python-course.eu/recursive_functions.php
+
 
 from tkinter import * #imports tkinter
 
@@ -7,8 +13,8 @@ import random #import random for generating password
 
 
 class Password(object): #create class for password
-    def __init__(self, length, useSpecialChars, useUpperCase, useLowerCase, useNumbers):
-        object.__init__(self) #constructor for password class
+    def __init__(self, length, useSpecialChars, useUpperCase, useLowerCase, useNumbers): #constructor for password class
+        object.__init__(self) 
         self.setLength(length) #setting value for length
         self.setSpecialChars(bool(useSpecialChars)) #setting value for special characters and casting as boolean
         self.setUpperCase(bool(useUpperCase)) #setting value for uppercase and casting as boolean
@@ -116,11 +122,11 @@ class Password(object): #create class for password
             self.createPassword()
 
 
-class WindowGeneratePassword(Tk):
-    def __init__(self):
+class WindowGeneratePassword(Tk): #creates a class for generate password window
+    def __init__(self): #constructor for WindowGeneratePassword class
         Tk.__init__(self)
 
-        self.wm_title("Generate Password") #creates title for window - " "
+        self.wm_title("Generate Password") #creates title for window - "Generate Password"
 
         Label(self, text = "Generate Password").grid(row = 0, columnspan = 2) #creates a label for Generate password and puts at 0,2
         
@@ -162,7 +168,7 @@ class WindowGeneratePassword(Tk):
 
         self.mainloop() #loop window until you push close button on the top window bar
 
-    def closeWindow(self):
+    def closeWindow(self): #function for closing window when 'close' button is clicked
         
         return
     

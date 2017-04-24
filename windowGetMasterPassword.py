@@ -3,8 +3,8 @@
 from tkinter import * #imports tkinter
 
 class WindowGetMasterPassword(Tk): #create class for get master password window of ui
-    def __init__(self):
-        Tk.__init__(self) #constructor for get master password window
+    def __init__(self): #constructor for get master password window
+        Tk.__init__(self) 
 
         self.wm_title("Get Master Password") #creates title for window - "Get Master Password"
 

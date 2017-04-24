@@ -4,8 +4,8 @@
 from tkinter import * #imports tkinter
 
 class WindowMain(Tk): #create class for main window of UI
-    def __init__(self):
-        Tk.__init__(self) #constructor for main window
+    def __init__(self): #constructor for main window
+        Tk.__init__(self) 
 
         self.wm_title("Main Window") #creates title for window - "Main Window"
 

@@ -1,0 +1,20 @@
+[
+    {
+        "AccountName": "Facebook",
+        "Username" : "Bob@blah.com",
+        "Password" : "password",
+        "Url" : "www.facebook.com"
+    },
+    {
+        "AccountName": "Twitter",
+        "Username" : "Larry@blah.com",
+        "Password" : "anotherPassword",
+        "Url" : "www.twitter.com"
+    },
+    {
+        "AccountName": "YouTube",
+        "Username" : "Phil@blah.com",
+        "Password" : "Password53",
+        "Url" : "www.Youtube.com"
+    }
+]
