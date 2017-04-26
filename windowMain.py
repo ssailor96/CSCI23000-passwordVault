@@ -23,13 +23,35 @@ class WindowMain(Tk): #create class for main window of UI
         self.btnChangeMasterPassword = Button(self, text = "Change Master Password", command = self.PlaceHolder) #creates a button for change master password
         self.btnChangeMasterPassword.grid(row = 4, column = 0) #assign to grid position 4,0
 
-        self.btnCloseProgram = Button(self, text = "Close Program", command = self.PlaceHolder) #creates a button for close program
+        self.btnCloseProgram = Button(self, text = "Close Program", command = self.closeWindow) #creates a button for close program
         self.btnCloseProgram.grid(row = 5, column = 0) #assign to grid position 5,0
 
         self.mainloop() #loop window until you push close button on the top window bar
 
+
+    def closeWindow(self):
+        self.WindowMain.destroy()
+
+
+# import tkinter
+
+
+# class App():
+#    def __init__(self):
+#        self.root = Tkinter.Tk()
+#        button = Tkinter.Button(self.root, text = 'root quit', command=self.quit)
+#        button.pack()
+#        self.root.mainloop()
+
+#    def quit(self):
+#        self.root.destroy 
+
+# app = App()
+        
+
+
     def PlaceHolder(self):
-         #### TODO: PLACEHOLDER TO ALLOW TO RUN GUI  --  NEED TO CREATE FUNCTIONS TO CALL THE PROPER WINDOWS AND REFERENCE THEM FROM THE BUTTONS ###
+    #      #### TODO: PLACEHOLDER TO ALLOW TO RUN GUI  --  NEED TO CREATE FUNCTIONS TO CALL THE PROPER WINDOWS AND REFERENCE THEM FROM THE BUTTONS ###
         return
 
 def main():
